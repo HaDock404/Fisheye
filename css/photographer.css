@@ -1,0 +1,366 @@
+#contact_modal {
+    display: none;
+}
+
+.photograph-header {
+    background-color: #FAFAFA;
+    height: 300px;
+    margin: 0 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.contact_button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal {
+    border-radius: 5px;
+    background-color: #DB8876;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    margin: auto;
+}
+
+.modal header {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal header img {
+    cursor: pointer;
+}
+
+.modal header h2 {
+    font-size: 64px;
+    font-weight: normal;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+form label {
+    color: #312E2E;
+    font-size: 36px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: self-start;
+    margin-bottom: 26px;
+}
+
+form input {
+    width: 100%;
+    height: 68px;
+    border: none;
+    border-radius: 5px;
+}
+
+.photographName {
+    color: #D3573C;
+    font-size: 64px;
+    font-weight: normal;
+    text-align: left;
+    margin: 0px;
+}
+
+.location {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    color: #901C1C;
+    font-size: 24px;
+}
+
+.tagLine {
+    color: #525252;
+    font-size: 18px;
+}
+
+.postPicture {
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 2px 1px 5px #383838;
+    cursor: pointer;
+}
+
+.post {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.pictureTitle {
+    color: #901C1C;
+    font-size: 24px;
+}
+
+.likeNumber {
+    color:#901C1C;
+    font-size: 24px;
+}
+
+.publication {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+footer {
+    position: fixed;
+    bottom: -30px;
+    right: 36px;
+    width: 376px;
+    height: 89px;
+    background-color:#DB8876;
+    color: black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.footer {
+    margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+.sorting {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 50px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.select {
+    cursor: pointer;
+    background-color: #901C1C;
+    color: white;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.select:hover {
+    background-color: #DB8876;
+}
+
+.menucache {
+    width: 200px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation-name: modale;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    position: absolute;
+    z-index: -1;
+    background-color: #901C1C;
+    top: 45px;
+    border-radius: 5px;
+    color: white;
+
+}
+
+.triage {
+    width: 80%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    animation-name: modaleX;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    transform-origin: bottom;
+    border-bottom: 1px solid white;
+
+}
+
+.test3 {
+    border-bottom: 0px solid white;
+}
+
+.test1 .test2 .test3 {
+    animation-duration: 10000ms;
+    animation-fill-mode: forwards;
+}
+
+.triage:hover {
+    background-color: #DB8876;
+    color: black;
+    width: 100%;
+}
+
+.unroll {
+    margin-left: 20px;
+    position: relative;
+    z-index: 1;
+    width: 170px;
+}
+
+@keyframes modale {
+    from {
+         height: 0;
+    }
+    to {
+        height: 150px;
+    }
+}
+
+@keyframes modaleX {
+    from {
+         
+         opacity: 0;
+    }
+    to {
+        
+        opacity: 1;
+    }
+}
+
+@keyframes closeModale {
+    from {
+         
+        height: 150px;
+    }
+    to {
+        
+        height: 0px;
+
+    }
+}
+
+@keyframes closeModale2 {
+    from {
+         
+        height: 50px;
+        opacity: 1;
+    }
+    to {
+        
+        height: 0px;
+        opacity: 0;
+
+    }
+}
+
+
+
+
+
+
+
+
+.modalDisplayPicture {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #DB8876;
+    bottom: 0px;
+    overflow-x: hidden;
+    animation-name: modaleZ;
+    animation-duration: 1000ms;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.picture {
+    width: 80%;
+    height: 80%;
+}
+
+#left {
+    font-size: 70px;
+    font-weight: bold;
+    color: white;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+#right {
+    font-size: 70px;
+    font-weight: bold;
+    color: white;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+@keyframes modaleZ {
+    0% {
+        transform: translateY(-150px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.modalPicture {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+html { 
+    overflow-y: auto; 
+}
+
+.closeButton {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+}

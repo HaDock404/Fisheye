@@ -34,7 +34,7 @@ h1 {
     flex-direction: column;
 }
 
-.ligne1 {
+.photographes-arrangement {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 70px;
@@ -50,7 +50,7 @@ h1 {
     
 }
 
-.image {
+.profil-picture{
     width: 200px;
     height: 200px;
     margin-top: 10px;
@@ -60,7 +60,7 @@ h1 {
     cursor: pointer;
 }
 
-.image:hover {
+.profil-picture:hover {
     transform: scale(1.05);
     box-shadow: 6px 6px 15px #383838;
     transition: 500ms;
@@ -93,4 +93,8 @@ h4 {
     font-size: 9px;
     color: #757575;
     margin: 0px;
+}
+
+a {
+    text-decoration: none;
 }

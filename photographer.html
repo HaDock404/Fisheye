@@ -9,7 +9,9 @@
   </head>
   <body>
     <header>
-      <a href="index.html"><img src="assets/images/logo.png" class="logo" /></a>
+      <a href="index.html">
+        <img src="assets/images/logo.png" class="logo" aria-label="Logo du site Fisheye" alt="Logo du site Fisheye"/>
+      </a>
     </header>
     
     <main id="main">
@@ -22,15 +24,29 @@
     <div id="contact_modal">
 			<div class="modal">
 				<header>
-          <h2>Contactez-moi</h2>
+          <div id="headerModal">
+            <h2>Contactez-moi</h2>
+          </div>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-				<form>
+				<form onsubmit="return testSubmitModal();">
 					<div>
 						<label>Prénom</label>
-						<input />
+						<input type="text" required="required">
 					</div>
-          <button class="contact_button">Envoyer</button>
+          <div>
+						<label>Nom</label>
+						<input type="text" required="required">
+					</div>
+          <div>
+						<label>Email</label>
+						<input type="text" required="required">
+					</div>
+          <div>
+						<label>Votre message</label>
+						<input type="text" required="required" id="request-message">
+					</div>
+          <button class="contact_button margin_button" type="submit">Envoyer</button>
 				</form>
 			</div>
 		</div>
@@ -47,7 +63,7 @@
       </div>
     </div>
 
-    <div class="post"></div>
+    <section class="post"></section>
 
     <div class="modalDisplayPicture">
       <img src="assets/icons/close.svg" onclick="openModalePicture();" class="closeButton"/>
@@ -58,6 +74,7 @@
     
     <footer>
       <div class="likes-total"></div>
+      
       <div class="price-day"></div>
     </footer>
 

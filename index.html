@@ -9,19 +9,19 @@
   </head>
   <body>
     <header>
-        <img src="assets/images/logo.png" class="logo" />
+        <img src="assets/images/logo.png" class="logo" aria-label="Logo du site Fisheye" alt="Logo du site Fisheye"/>
         <h1>Nos photographes</h1>
     </header>
+    
     <main id="main">
-        <div class="photographes">
-          <div class="ligne1" id="test">
-          </div>
-        </div>
+        <section class="photographes" aria-label="Liste de photographes">
+          <article class="photographes-arrangement" id="card" aria-label="Profil du photographe"></article>
+        </section>
     </main>
+    
     
     
     <script src="scripts/factories/Photographer.js"></script>
     <script src="scripts/pages/index.js"></script>
-    <script src="scripts/pages/photographer.js"></script>
   </body>
 </html>

@@ -19,51 +19,50 @@
         <div class="photograph-bio"></div>
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
       </div>
-    </main>
-    
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <div id="headerModal">
-            <h2>Contactez-moi</h2>
-          </div>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-				<form onsubmit="testSubmitModal();">
-					<div>
-						<label>Prénom</label>
-						<input type="text" required="required">
-					</div>
-          <div>
-						<label>Nom</label>
-						<input type="text" required="required">
-					</div>
-          <div>
-						<label>Email</label>
-						<input type="text" required="required">
-					</div>
-          <div>
-						<label>Votre message</label>
-						<input type="text" required="required" id="request-message">
-					</div>
-          <button class="contact_button margin_button" type="submit">Envoyer</button>
-				</form>
-			</div>
-		</div>
 
-    <div class="sorting">
-      <div>Trier par</div>
-      <div class="unroll" onclick="displayUnroll();">
-        <div class="select">Sélection</div>
-        <div class="menucache">
-            <div class="triage test1" onclick="app.like();">Popularité</div>
-            <div class="triage test2" onclick="app.title();">Titre</div>
-            <div class="triage test3" onclick="app.date();">Date</div>
+      <div id="contact_modal">
+        <div class="modal">
+          <header>
+            <div id="headerModal">
+              <h2>Contactez-moi</h2>
+            </div>
+            <img src="assets/icons/close.svg" onclick="closeModal()" />
+          </header>
+          <form onsubmit="testSubmitModal();">
+            <div>
+              <label>Prénom</label>
+              <input type="text" required="required">
+            </div>
+            <div>
+              <label>Nom</label>
+              <input type="text" required="required">
+            </div>
+            <div>
+              <label>Email</label>
+              <input type="text" required="required">
+            </div>
+            <div>
+              <label>Votre message</label>
+              <input type="text" required="required" id="request-message">
+            </div>
+            <button class="contact_button margin_button" type="submit">Envoyer</button>
+          </form>
         </div>
       </div>
-    </div>
 
-    <section class="post"></section>
+      <div class="sorting">
+        <div>Trier par</div>
+        <div class="unroll" onclick="displayUnroll();">
+          <div class="select">Sélection</div>
+          <div class="menucache">
+              <div class="triage test1" onclick="app.like();">Popularité</div>
+              <div class="triage test2" onclick="app.title();">Titre</div>
+              <div class="triage test3" onclick="app.date();">Date</div>
+          </div>
+        </div>
+      </div>
+
+      <section class="post"></section>
 
     <div class="modalDisplayPicture">
       <img src="assets/icons/close.svg" onclick="openModalePicture();" class="closeButton"/>
@@ -71,6 +70,13 @@
       <div class="picture"></div>
       <div id="right">></div>
     </div>
+    </main>
+    
+    
+
+    
+
+    
     
     <footer>
       <div class="likes-total"></div>

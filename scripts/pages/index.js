@@ -33,7 +33,7 @@
         createPhotographerCard() {
             const article = document.getElementById("card");
     
-            const photographerCard = "<a class='profil' href='photographer.html?id="+this._profil.id+"' aria-label='Lien du profil de "+this._profil.name+"'><img class='profil-picture' src='assets/photographers/"+this._profil.portrait+"' alt='"+this._profil.name+"' aria-label='Photo de profil'><h2 aria-label='Nom du photographe "+this._profil.name+"'>"+this._profil.name+"</h2><h3 aria-label='Localisation du photographe "+this._profil.city+", "+this._profil.country+"'>"+this._profil.city+", "+this._profil.country+"</h3><h4 aria-label='Mantra du photographe "+this._profil.tagline+"'>"+this._profil.tagline+"</h4><div class='price' aria-label='Prix du photographe à la journée "+this._profil.price+"€'>"+this._profil.price+"€/jour</div></a>"
+            const photographerCard = "<a class='profil' href='photographer.html?id="+this._profil.id+"' aria-label='Lien du profil de "+this._profil.name+"'><img class='profil-picture' src='assets/photographers/"+this._profil.portrait+"' alt='"+this._profil.name+"'><h2>"+this._profil.name+"</h2><h3>"+this._profil.city+", "+this._profil.country+"</h3><h4>"+this._profil.tagline+"</h4><div class='price'>"+this._profil.price+"€/jour</div></a>"
             
             article.innerHTML += photographerCard
         }

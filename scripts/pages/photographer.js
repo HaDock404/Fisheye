@@ -72,7 +72,7 @@ let totalLikes = 0;/**Init total like */
 
             if (this._profil.id == idPhotographer) {/**Check URL matches with Data*/
                 
-                const photographerCard = "<h1 class='photographName' aria-label='Nom du photographe "+this._profil.name+"'>"+this._profil.name+"</h1><h2 class='location' aria-label='Localisation du photographe "+this._profil.city+", "+this._profil.country+"'>"+this._profil.city+", "+this._profil.country+"</h2><h3 class='tagLine' aria-label='Mantra du photographe "+this._profil.tagline+"'>"+this._profil.tagline+"</h3>"
+                const photographerCard = "<h1 class='photographName'>"+this._profil.name+"</h1><h2 class='location'>"+this._profil.city+", "+this._profil.country+"</h2><h3 class='tagLine'>"+this._profil.tagline+"</h3>"
 
                 const photographerPicture = '<img src="assets/photographers/'+this._profil.portrait+'" class="profil-picture" alt="'+this._profil.name+'" aria-label="Photo de profil de '+this._profil.name+' "/>'
 
@@ -105,7 +105,7 @@ let totalLikes = 0;/**Init total like */
 
                 if (this._profil.image == undefined) {/**Check if it's not a picture -> video */
                     
-                    const pictureCard = "<article tabindex='2' class='publication' aria-label='Post du photographe'><video id='"+this._profil.id+"' class='postPicture' alt='"+this._profil.title+"' aria-label='Vidéo'><source src='assets/images/"+this._profil.video+"' type='video/mp4'></video><div class='stats'><h2 class='pictureTitle'>"+this._profil.title+" aria-label='Titre de la vidéo "+this._profil.title+"'</h2><h3 value='0' class='likeNumber' id='"+this._profil.id+"' aria-label='Nombre de like "+this._profil.likes+"'>"+this._profil.likes+" <img class='heart' src='assets/icons/heart-red.svg' alt=''></img></h3></div></article>";
+                    const pictureCard = "<article tabindex='2' class='publication'><video id='"+this._profil.id+"' class='postPicture' alt='"+this._profil.title+"' aria-label='Vidéo'><source src='assets/images/"+this._profil.video+"' type='video/mp4'></video><div class='stats'><h2 class='pictureTitle'>"+this._profil.title+"</h2><h3 value='0' class='likeNumber' id='"+this._profil.id+"'>"+this._profil.likes+" <img class='heart' src='assets/icons/heart-red.svg' alt=''></img></h3></div></article>";
 
                     post.innerHTML += pictureCard;
 
@@ -116,7 +116,7 @@ let totalLikes = 0;/**Init total like */
                 
                 } else { /**It's a picture */
                     
-                    const pictureCard = "<article tabindex='2' class='publication' aria-label='Post du photographe'><img src='assets/images/"+this._profil.image+"' class='postPicture' id='"+this._profil.id+"' alt='"+this._profil.title+"' aria-label='Photo'/><div class='stats'><h2 class='pictureTitle' aria-label='Titre de la photo "+this._profil.title+"'>"+this._profil.title+"</h2><h3 value='0' class='likeNumber' id='"+this._profil.id+"' aria-label='Nombre de like "+this._profil.likes+"'>"+this._profil.likes+" <img class='heart' src='assets/icons/heart-red.svg' alt=''></img></h3></div></article>";
+                    const pictureCard = "<article tabindex='2' class='publication'><img src='assets/images/"+this._profil.image+"' class='postPicture' id='"+this._profil.id+"' alt='"+this._profil.title+"' aria-label='Photo'/><div class='stats'><h2 class='pictureTitle'>"+this._profil.title+"</h2><h3 value='0' class='likeNumber' id='"+this._profil.id+"'>"+this._profil.likes+" <img class='heart' src='assets/icons/heart-red.svg' alt=''></img></h3></div></article>";
                     
                     post.innerHTML += pictureCard;
 
@@ -233,7 +233,7 @@ let totalLikes = 0;/**Init total like */
         tabCard.reverse();
         
         loopInnerHTML();
-        changeSelect.innerHTML = '<div>Popularité</div>'
+        changeSelect.innerHTML = '<div aria-labelledby="Trie par popularité">Popularité</div>'
     }
 
     /**Sorting by title */
@@ -252,7 +252,7 @@ let totalLikes = 0;/**Init total like */
         });
         
         loopInnerHTML();
-        changeSelect.innerHTML = '<div>Titre</div>'
+        changeSelect.innerHTML = '<div aria-labelledby="Trie par ordre alphabétique">Titre</div>'
     }
 
     /**Sorting by date */
@@ -265,7 +265,7 @@ let totalLikes = 0;/**Init total like */
         })
         
         loopInnerHTML();
-        changeSelect.innerHTML = '<div>Date</div>'
+        changeSelect.innerHTML = '<div aria-labelledby="Trie par date">Date</div>'
     }
 
    /**Display picture after sorting */ 
@@ -284,12 +284,12 @@ let totalLikes = 0;/**Init total like */
 
             if (picture == undefined) {
                 
-                const pictureCard = "<article class='publication'><video  class='postPicture' id='"+id+"' alt='"+title+"' aria-label='Vidéo'><source src='assets/images/"+video+"' type='video/mp4'></video><div class='stats'><h2 class='pictureTitle' aria-label='Titre de la vidéo "+title+"'>"+title+"</h2><h3 value='0' class='likeNumber' id='"+id+"' aria-label='Nombre de like "+likes+"'>"+likes+" <img class='heart' src='assets/icons/heart-red.svg' alt=''></img></h3></div></article>";
+                const pictureCard = "<article class='publication'><video  class='postPicture' id='"+id+"' alt='"+title+"' aria-label='Vidéo'><source src='assets/images/"+video+"' type='video/mp4'></video><div class='stats'><h2 class='pictureTitle'>"+title+"</h2><h3 value='0' class='likeNumber' id='"+id+"'>"+likes+" <img class='heart' src='assets/icons/heart-red.svg' alt=''></img></h3></div></article>";
     
                 post.innerHTML += pictureCard;
             } else {
                 
-                const pictureCard = "<article class='publication'><img src='assets/images/"+picture+"' class='postPicture' id='"+id+"' alt='"+title+"' aria-label='Photo'/><div class='stats'><h2 class='pictureTitle' aria-label='Titre de la photo "+title+"'>"+title+"</h2><h3 value='0' class='likeNumber' id='"+id+"' aria-label='Nombre de like "+likes+"'>"+likes+" <img class='heart' src='assets/icons/heart-red.svg' alt=''></img></h3></div></article>";
+                const pictureCard = "<article class='publication'><img src='assets/images/"+picture+"' class='postPicture' id='"+id+"' alt='"+title+"' aria-label='Photo'/><div class='stats'><h2 class='pictureTitle'>"+title+"</h2><h3 value='0' class='likeNumber' id='"+id+"'>"+likes+" <img class='heart' src='assets/icons/heart-red.svg' alt=''></img></h3></div></article>";
     
                 post.innerHTML += pictureCard;
             }
@@ -496,7 +496,14 @@ let totalLikes = 0;/**Init total like */
         }
     }
 
-    function testSubmitModal() {
+    function testSubmitModal(event) {
+
+
+        event.preventDefault()
+        console.log(event.target[0].value)
+        console.log(event.target[1].value)
+        console.log(event.target[2].value)
+        console.log(event.target[3].value)
         closeModal();
         return false; 
     }

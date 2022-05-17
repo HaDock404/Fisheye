@@ -14,14 +14,17 @@ function displayUnroll() {
         triage1.style.animationName = "closeModale2";
         triage2.style.animationName = "closeModale2";
         triage3.style.animationName = "closeModale2";
+        modalSelect.removeAttribute("aria-expanded")
+        modalSelect.setAttribute("aria-hidden", "true")
         setTimeout(closed, 500)                
     } else {
         modalSelect.style.display = "flex";
-        console.log("ouverture")
         modalSelect.style.animationName = "modale";
         triage1.style.animationName = "modaleX";
         triage2.style.animationName = "modaleX";
         triage3.style.animationName = "modaleX";
+        modalSelect.removeAttribute("aria-hidden")
+        modalSelect.setAttribute("aria-expanded", "true")
         
     }
 }

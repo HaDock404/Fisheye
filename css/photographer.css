@@ -219,16 +219,29 @@ article h2 {
 }
 
 
+.sorting button {
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: none;
+    color: white;
+    background-color: #901C1C;
+    border-bottom: 1px solid white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
 
-
-
+.sorting button:hover {
+    background-color: #DB8876;
+    border: none;
+}
 
 
 .sorting {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-left: 50px;
+    padding-left: 100px;
     font-size: 18px;
     font-weight: bold;
 }

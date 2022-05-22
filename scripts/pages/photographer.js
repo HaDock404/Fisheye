@@ -105,7 +105,7 @@ let totalLikes = 0;/**Init total like */
 
                 if (this._profil.image == undefined) {/**Check if it's not a picture -> video */
                     
-                    const pictureCard = "<article tabindex='2' class='publication'><video id='"+this._profil.id+"' class='postPicture' alt='"+this._profil.title+"' aria-label='Vidéo'><source src='assets/images/"+this._profil.video+"' type='video/mp4'></video><div class='stats'><h2 class='pictureTitle'>"+this._profil.title+"</h2><h3 value='0' class='likeNumber' id='"+this._profil.id+"'>"+this._profil.likes+" <img class='heart' src='assets/icons/heart-red.svg' alt=''></img></h3></div></article>";
+                    const pictureCard = "<article class='publication'><video tabindex='0' id='"+this._profil.id+"' class='postPicture' alt='"+this._profil.title+"' aria-label='Vidéo'><source src='assets/images/"+this._profil.video+"' type='video/mp4'></video><div class='stats'><h2 class='pictureTitle'>"+this._profil.title+"</h2><h3 value='0' class='likeNumber' id='"+this._profil.id+"'>"+this._profil.likes+" <img class='heart' src='assets/icons/heart-red.svg' alt=''></img></h3></div></article>";
 
                     post.innerHTML += pictureCard;
 
@@ -116,7 +116,7 @@ let totalLikes = 0;/**Init total like */
                 
                 } else { /**It's a picture */
                     
-                    const pictureCard = "<article tabindex='2' class='publication'><img src='assets/images/"+this._profil.image+"' class='postPicture' id='"+this._profil.id+"' alt='"+this._profil.title+"' aria-label='Photo'/><div class='stats'><h2 class='pictureTitle'>"+this._profil.title+"</h2><h3 value='0' class='likeNumber' id='"+this._profil.id+"'>"+this._profil.likes+" <img class='heart' src='assets/icons/heart-red.svg' alt=''></img></h3></div></article>";
+                    const pictureCard = "<article class='publication'><img tabindex='0' src='assets/images/"+this._profil.image+"' class='postPicture' id='"+this._profil.id+"' alt='"+this._profil.title+"' aria-label='Photo'/><div class='stats'><h2 class='pictureTitle'>"+this._profil.title+"</h2><h3 value='0' class='likeNumber' id='"+this._profil.id+"'>"+this._profil.likes+" <img class='heart' src='assets/icons/heart-red.svg' alt=''></img></h3></div></article>";
                     
                     post.innerHTML += pictureCard;
 
@@ -284,12 +284,12 @@ let totalLikes = 0;/**Init total like */
 
             if (picture == undefined) {
                 
-                const pictureCard = "<article class='publication'><video  class='postPicture' id='"+id+"' alt='"+title+"' aria-label='Vidéo'><source src='assets/images/"+video+"' type='video/mp4'></video><div class='stats'><h2 class='pictureTitle'>"+title+"</h2><h3 value='0' class='likeNumber' id='"+id+"'>"+likes+" <img class='heart' src='assets/icons/heart-red.svg' alt=''></img></h3></div></article>";
+                const pictureCard = "<article class='publication'><video tabindex='0'  class='postPicture' id='"+id+"' alt='"+title+"' aria-label='Vidéo'><source src='assets/images/"+video+"' type='video/mp4'></video><div class='stats'><h2 class='pictureTitle'>"+title+"</h2><h3 value='0' class='likeNumber' id='"+id+"'>"+likes+" <img class='heart' src='assets/icons/heart-red.svg' alt=''></img></h3></div></article>";
     
                 post.innerHTML += pictureCard;
             } else {
                 
-                const pictureCard = "<article class='publication'><img src='assets/images/"+picture+"' class='postPicture' id='"+id+"' alt='"+title+"' aria-label='Photo'/><div class='stats'><h2 class='pictureTitle'>"+title+"</h2><h3 value='0' class='likeNumber' id='"+id+"'>"+likes+" <img class='heart' src='assets/icons/heart-red.svg' alt=''></img></h3></div></article>";
+                const pictureCard = "<article class='publication'><img tabindex='0' src='assets/images/"+picture+"' class='postPicture' id='"+id+"' alt='"+title+"' aria-label='Photo'/><div class='stats'><h2 class='pictureTitle'>"+title+"</h2><h3 value='0' class='likeNumber' id='"+id+"'>"+likes+" <img class='heart' src='assets/icons/heart-red.svg' alt=''></img></h3></div></article>";
     
                 post.innerHTML += pictureCard;
             }
@@ -314,9 +314,10 @@ let totalLikes = 0;/**Init total like */
 
         for(let i = 0; i < image.length; i++) {
             image[i].addEventListener("click", displayPicture);
+            image[i].addEventListener("keydown", displayPictureKey);
         }
     }
- 
+
     /**Add listener on every like for the increment*/
     function likeListener() {
 
@@ -403,6 +404,60 @@ let totalLikes = 0;/**Init total like */
             j++;
         }
     }
+
+
+    /**Display slideshow Modal with EnterKey*/
+    function displayPictureKey(e) {
+
+        switch (e.keyCode) {
+            case 13:
+                const attribute = e.target.getAttribute("id");
+        let j = 0;
+
+        openModalePicture();
+
+
+        while (j < tabCard.length) {
+            const imgX = tabCard[j].picture;
+            const idX = tabCard[j].id;
+
+            if(idX == attribute) {
+
+                if(imgX == undefined) {
+
+                    const imgX = tabCard[j].video;
+
+                    picture.innerHTML = "<video controls  class='modalPicture'><source src='assets/images/"+imgX+"' type='video/mp4'></video>";
+                } else {
+
+                    picture.innerHTML = `<img class="modalPicture" src="assets/images/`+imgX+`" alt="">`;
+                }
+                
+                tabModal.push(imgX)
+                
+                left.addEventListener("click", changeLeft);
+                right.addEventListener("click", changeRight);
+
+                document.onkeydown = function(e) {
+                    switch (e.keyCode) {
+                        case 37:
+                            changeLeft();
+                            break;
+                        case 39:
+                            changeRight();
+                            break;
+                            case 27:
+                                openModalePicture();
+                                break;
+                    }
+                };
+            }
+            j++;
+        }
+        break;
+        }
+        
+      }
 
     function openModalePicture() {
 
